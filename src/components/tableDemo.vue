@@ -190,6 +190,14 @@
 </style>
 <!---需设置为全局css样式-->
 <style>
+  /* 设置el-table滚动条的样式 */
+  .el-table ::-webkit-scrollbar {
+    height: 18px;
+  }
+  /* 滚动条滑块 */
+  .el-table ::-webkit-scrollbar-thumb {
+    background:#ccc;
+  }
   .tableC{
     position:relative;
   }

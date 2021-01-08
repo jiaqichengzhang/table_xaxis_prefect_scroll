@@ -9,7 +9,7 @@ Vue.directive('perfectScrollbar', {
 //自定义app滚动事件
 Vue.directive('appScroll', {
   bind: function(el, binding, vNode) {
-    let start = (e) =>{
+   let start = (e) =>{
       fixTabScrollbar(null,el)
     }
     // 添加事件监听器
@@ -27,7 +27,7 @@ function fixTabScrollbar(tabEle,appEle,trCount) {
   var trCount=trCount||tbody.getElementsByTagName("tr").length //tr的个数
   let trHeight=50.4 //tr的高度（自己设置的,这里el-table-column需要设置为 show-overflow-tooltip，不然换行会影响tr的高度） elementui这个框架，不知道0.4哪里来的
   let theadHeight=thead.clientHeight?thead.clientHeight:60; // 表头的高度，60是默认的高度(自己设置的)
-  let tabHeight=theadHeight+trHeight*trCount+5 //table的高度 （这块自己需更具自己的布局调整,5不清楚是哪里少出来的）
+  let tabHeight=theadHeight+trHeight*trCount+18 //table的高度 （18是el-table水平滚动条的高度）
   let tabWinWidth=thead.clientWidth //table视口的宽度
   let tabWidth=thead.getElementsByTagName('table')[0].offsetWidth;//table的宽度
   let appHeight=appEle.offsetHeight- getOffsetTop(appEle) // 窗口的高度
